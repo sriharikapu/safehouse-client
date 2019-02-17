@@ -1,0 +1,30 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Home</h1>
+  </div>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4" *ngFor="let avatar of avatarService.avatars">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="{{ avatar.image }}" alt="{{ avatar.name }}">
+            <div class="card-body">
+              <h2>@{{ avatar.name }}</h2>
+              <p class="card-text">{{ avatar.description }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View Items</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Sell</button>
+                </div>
+                <small class="text-muted">{{ avatar.estimatedValue }} ETH</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,51 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">Create Avatar</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Avatar</span>
+      </h4>
+      <img class="img-fluid rounded" [src]="imgURL" *ngIf="imgURL">
+    </div>
+    <div class="col-md-8 order-md-1">
+      <form class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="username">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+              Your username is required.
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <label for="username">Image</label>
+          <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse… <input #file type="file" accept='image/*' (change)="preview(file.files)">
+                </span>
+            </span>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="mb-3">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Super secret promo code">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-secondary">Redeem</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Create Avatar</button>
+      </form>
+    </div>
+  </div>
+</main>
